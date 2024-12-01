@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <img
-            src={require('./Resources/Untitled design (25).png')}
+            src={require('./Resources/Untitled design (26).png')}
             alt="Logo"
             className="logo-image"
           />
