@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -18,10 +12,7 @@ const Navbar = () => {
             className="logo-image"
           />
         </div>
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
-        <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+        <ul className="navbar-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
