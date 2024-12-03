@@ -160,16 +160,12 @@ body {
   right: 50px; /* Position further to the right */
   background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   backdrop-filter: blur(20px); /* Glass-like blur effect */
-  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  -webkit-backdrop-filter: blur(20px); /* Safari support for blur effect */
   border-radius: 20px; /* Smooth rounded corners */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Add prominent shadow for depth */
   padding: 40px 30px; /* Adjust padding */
   z-index: 1000; /* Ensure the dropdown is on top */
   width: 400px; /* Dropdown width */
-  transform: scale(0.5) rotateY(-90deg); /* Start with a small, rotated state */
-  transform-origin: right center; /* Set the origin for the flip */
-  opacity: 0; /* Start invisible */
-  animation: flipAndPop 0.5s ease forwards; /* Apply animation */
 }
 
 /* Dropdown list */
@@ -181,7 +177,8 @@ body {
 
 /* Menu item styles */
 .menu-dropdown li {
-  margin: 25px 0; /* Spacing between menu items */
+  margin: 15px 0; /* Spacing between menu items */
+  position: relative; /* For the ::before arrow positioning */
 }
 
 .menu-dropdown a {
@@ -195,24 +192,18 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
 }
 
-/* Hover effect for dropdown items */
-.menu-dropdown a:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover background */
-  color: black; /* Maintain black text on hover */
+
+.menu-dropdown li::before {
+  content: ''; /* Default state with no arrow */
+  position: absolute;
+  left: -30px; /* Reserve space for the arrow */
+  font-size: 20px; /* Same size as hover arrow */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Smooth disappearance */
 }
 
-/* Flip and pop animation */
-@keyframes flipAndPop {
-  0% {
-    transform: scale(0.5) rotateY(-90deg); /* Start small and rotated */
-    opacity: 0; /* Fully invisible */
-  }
-  50% {
-    transform: scale(1.1) rotateY(-20deg); /* Overshoot for pop effect */
-    opacity: 0.7; /* Partially visible */
-  }
-  100% {
-    transform: scale(1) rotateY(0deg); /* End with normal size and no rotation */
-    opacity: 1; /* Fully visible */
-  }
+/* Hover effect for menu items */
+.menu-dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover background */
+  color: black; /* Maintain black text on hover */
 }
