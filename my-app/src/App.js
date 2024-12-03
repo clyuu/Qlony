@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import Services from './Services'; // Import the Services component
+import Portfolio from './Portfolio'; // Import the Portfolio component
 import './App.css'; // Ensure the CSS file is imported for styles
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
 
         {/* Services section with GSAP animations */}
         <Services />
+
+        {/* Portfolio section with GSAP animations */}
+        <Portfolio />
       </main>
     </div>
   );

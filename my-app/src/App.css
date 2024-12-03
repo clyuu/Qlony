@@ -115,6 +115,84 @@
   line-height: 1.5;
 }
 
+/* Portfolio Section */
+.portfolio {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #f3f4f6, #ffffff); /* Light gradient background */
+  text-align: center;
+  color: #333; /* Dark text for contrast */
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #6a11cb; /* Gradient purple */
+}
+
+.portfolio-description {
+  font-size: 1.2rem;
+  color: #555; /* Subtle contrast for secondary text */
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.portfolio-item {
+  background: #fff; /* White card background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.portfolio-svg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.portfolio-svg circle,
+.portfolio-svg rect,
+.portfolio-svg path {
+  stroke-width: 2px;
+  stroke: #6a11cb; /* Gradient purple */
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
 /* General Styles */
 body {
   margin: 0;
