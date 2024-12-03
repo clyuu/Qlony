@@ -28,7 +28,7 @@ body {
 
 /* Hidden state of the navbar */
 .navbar.hidden {
-  top: -60px; /* Adjust height to match the increased navbar size */
+  top: -60px; /* Adjust height to match the navbar size */
 }
 
 /* Visible state of the navbar */
@@ -38,7 +38,7 @@ body {
 
 .navbar-container {
   display: flex;
-  justify-content: space-between; /* Push items to left and right */
+  justify-content: space-between; /* Space out elements in the navbar */
   align-items: center; /* Ensure items are vertically centered */
   width: 100%; /* Ensure the container spans the full width */
 }
@@ -48,10 +48,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute; /* Center logo relative to navbar */
-  left: 50%; /* Move to center horizontally */
-  transform: translateX(-50%); /* Adjust for accurate centering */
-  z-index: 2; /* Ensure it appears above other elements */
 }
 
 .navbar-logo img {
@@ -59,25 +55,164 @@ body {
   height: auto; /* Maintain aspect ratio */
 }
 
-/* Menu styles */
-.navbar-menu {
+/* Menu button */
+.menu-icon {
   display: flex;
-  list-style: none;
+  align-items: center;
+  background: #111; /* Dark background for the button */
+  border-radius: 40px; /* Rounded button */
+  padding: 15px 30px; /* Increased padding to make the button larger */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Add a pointer cursor */
+  position: relative; /* For positioning the circle */
+  color: white; /* White text for contrast */
+  font-family: Arial, sans-serif; /* Set font for "MENU" text */
+  font-size: 16px; /* Larger font size for "MENU" text */
+  justify-content: space-between; /* Space out text and dots */
+  margin-right: 60px; /* Push the menu further ahead */
+  transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.menu-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  background: #000; /* Change background to a darker shade on hover */
+}
+
+.menu-text {
+  margin-right: 15px; /* Space between "MENU" text and dots */
+}
+
+.menu-dots {
+  display: flex;
+  gap: 5px; /* Space between dots */
+  position: relative; /* For the semi-transparent circle */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.menu-dots span {
+  display: block;
+  width: 8px; /* Dot width */
+  height: 8px; /* Dot height */
+  background: white; /* White dots for contrast */
+  border-radius: 50%; /* Make dots circular */
+}
+
+/* Semi-transparent circle always visible */
+.menu-dots::before {
+  content: '';
+  position: absolute;
+  width: 40px; /* Smaller size for the circle */
+  height: 40px; /* Smaller size for the circle */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 50%; /* Make it circular */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position for perfect centering */
+  z-index: -1; /* Place the circle behind the dots */
+}
+
+.menu-icon:hover .menu-dots {
+  transform: rotate(90deg); /* Rotate dots 90 degrees on hover */
+}
+
+/* Rotating white circle */
+.menu-circle {
+  position: absolute;
+  right: -25px; /* Position circle to the right of the button */
+  width: 25px;
+  height: 25px;
+  border: 2px solid white; /* White border for the circle */
+  border-radius: 50%; /* Make it circular */
+  transition: transform 0.5s ease; /* Smooth rotation effect */
+}
+
+.menu-icon:hover .menu-circle {
+  transform: rotate(180deg); /* Rotate 180 degrees on hover */
+}
+
+/* Dropdown menu styles */
+.menu-dropdown {
+  position: absolute;
+  top: 100px; /* Move dropdown further down */
+  right: 50px; /* Move dropdown further to the right */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  backdrop-filter: blur(15px); /* Add a stronger glass-like blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support for the blur effect */
+  border-radius: 16px; /* Smooth rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add a prominent shadow for depth */
+  padding: 50px; /* Increase padding for a spacious dropdown */
+  z-index: 1000; /* Ensure the dropdown is on top */
+  animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
+  width: 450px; /* Make the dropdown wider */
+}
+
+/* Dropdown list */
+.menu-dropdown ul {
+  list-style: none; /* Remove default bullet points */
   padding: 0;
   margin: 0;
-  align-items: center; /* Ensure items are vertically centered */
-  justify-content: flex-end; /* Push menu items to the right */
-  flex-grow: 1; /* Push the menu items to the edges */
 }
 
-/* Navbar menu items */
-.navbar-menu li {
-  margin: 0 15px; /* Add spacing between menu items */
+/* Dropdown menu styles */
+.menu-dropdown {
+  position: absolute;
+  top: 100px; /* Position further down */
+  right: 50px; /* Position further to the right */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  backdrop-filter: blur(20px); /* Glass-like blur effect */
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  border-radius: 20px; /* Smooth rounded corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Add prominent shadow for depth */
+  padding: 40px 30px; /* Adjust padding */
+  z-index: 1000; /* Ensure the dropdown is on top */
+  width: 400px; /* Dropdown width */
+  transform: scale(0.5) rotateY(-90deg); /* Start with a small, rotated state */
+  transform-origin: right center; /* Set the origin for the flip */
+  opacity: 0; /* Start invisible */
+  animation: flipAndPop 0.5s ease forwards; /* Apply animation */
 }
 
-.navbar-menu a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px; /* Maintain a compact font size */
-  line-height: 1.5; /* Adjust line height for better alignment */
+/* Dropdown list */
+.menu-dropdown ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu item styles */
+.menu-dropdown li {
+  margin: 25px 0; /* Spacing between menu items */
+}
+
+.menu-dropdown a {
+  text-decoration: none; /* Remove underline */
+  font-size: 24px; /* Large font size */
+  color: black; /* Set font color to black */
+  font-weight: bold; /* Bold font */
+  display: block; /* Make the entire item clickable */
+  padding: 10px 15px; /* Add padding */
+  border-radius: 12px; /* Rounded corners for hover effect */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for dropdown items */
+.menu-dropdown a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover background */
+  color: black; /* Maintain black text on hover */
+}
+
+/* Flip and pop animation */
+@keyframes flipAndPop {
+  0% {
+    transform: scale(0.5) rotateY(-90deg); /* Start small and rotated */
+    opacity: 0; /* Fully invisible */
+  }
+  50% {
+    transform: scale(1.1) rotateY(-20deg); /* Overshoot for pop effect */
+    opacity: 0.7; /* Partially visible */
+  }
+  100% {
+    transform: scale(1) rotateY(0deg); /* End with normal size and no rotation */
+    opacity: 1; /* Fully visible */
+  }
 }
