@@ -1,0 +1,114 @@
+/* General styling for the About section */
+.about {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f8f9fa, #ffffff); /* Light gradient */
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Container for About section */
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Section title styling */
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #6a11cb; /* Gradient purple */
+  }
+  
+  /* Description styling */
+  .about-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  /* Content layout with SVG and text */
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* SVG styling */
+  .about-svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .about-svg circle {
+    stroke-width: 2px;
+    stroke: #6a11cb; /* Match gradient purple */
+  }
+  
+  /* Text content layout */
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+  }
+  
+  /* Individual text block styling */
+  .about-text-block {
+    text-align: left;
+    background: #fff; /* White background for card effect */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-text-block:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  .about-text-block h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-text-block p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .about-svg {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .about-text-block {
+      padding: 15px;
+    }
+  
+    .about-text-block h3 {
+      font-size: 1.3rem;
+    }
+  
+    .about-text-block p {
+      font-size: 0.9rem;
+    }
+  }

@@ -193,6 +193,196 @@
   line-height: 1.5;
 }
 
+/* About Section */
+.about {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #ffffff, #f3f4f6); /* Light gradient */
+  text-align: center;
+  color: #333;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #6a11cb; /* Gradient purple */
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-svg {
+  width: 150px;
+  height: 150px;
+}
+
+.about-svg circle {
+  stroke-width: 2px;
+  stroke: #6a11cb; /* Match gradient purple */
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+}
+
+.about-text-block {
+  text-align: left;
+  background: #fff; /* White background for card effect */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-text-block:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.about-text-block h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.about-text-block p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Contact Us Section */
+.contacts {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #ffffff, #f3f4f6); /* Light gradient */
+  text-align: center;
+  color: #333;
+}
+
+.contacts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contacts-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #6a11cb; /* Gradient purple */
+}
+
+.contacts-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.contacts-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contacts-svg {
+  width: 150px;
+  height: 150px;
+}
+
+.contacts-svg circle {
+  stroke-width: 2px;
+  stroke: #6a11cb; /* Match gradient purple */
+}
+
+.contacts-form {
+  background: #fff; /* White card background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6a11cb; /* Highlight border on focus */
+}
+
+.contacts-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #6a11cb; /* Gradient purple */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contacts-button:hover {
+  background: #2575fc; /* Change on hover */
+  transform: scale(1.05);
+}
+
 /* General Styles */
 body {
   margin: 0;

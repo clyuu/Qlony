@@ -1,0 +1,135 @@
+/* General styling for the Contacts section */
+.contacts {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #ffffff, #f3f4f6); /* Light gradient */
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Container for the Contacts section */
+  .contacts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Section title styling */
+  .contacts-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #6a11cb; /* Gradient purple */
+  }
+  
+  /* Description styling */
+  .contacts-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  /* Content layout with SVG and form */
+  .contacts-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* SVG styling */
+  .contacts-svg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .contacts-svg circle {
+    stroke-width: 2px;
+    stroke: #6a11cb; /* Match gradient purple */
+  }
+  
+  /* Form styling */
+  .contacts-form {
+    background: #fff; /* White card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #6a11cb; /* Highlight border on focus */
+  }
+  
+  /* Submit button styling */
+  .contacts-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6a11cb; /* Gradient purple */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contacts-button:hover {
+    background: #2575fc; /* Change on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .contacts-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .contacts-svg {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .contacts-form {
+      padding: 15px;
+    }
+  
+    .contacts-button {
+      font-size: 0.9rem;
+    }
+  }
