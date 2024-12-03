@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(true); // State to control navbar visibility
+  let lastScrollY = 0; // Variable to store the last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setShowNavbar(false); // Hide navbar when scrolling down
+      } else {
+        setShowNavbar(true); // Show navbar when scrolling up
+      }
+
+      lastScrollY = currentScrollY; // Update the last scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <img

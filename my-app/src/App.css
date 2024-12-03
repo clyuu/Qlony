@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
+  text-align: center;
+  padding: 2rem;
+
+  /* Initial states for GSAP animation */
+  opacity: 0;
+  transform: translateY(50px);
 }
 
-.App-link {
-  color: #61dafb;
+.hero-svg {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  stroke: white;
+  stroke-width: 2px;
+  fill: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.hero-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff4081;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ff79a2;
+  transform: scale(1.05);
 }

@@ -5,13 +5,34 @@ body {
   padding: 0;
 }
 
+/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: transparent; /* Transparent navbar */
+  padding: 5px 20px; /* Reduced padding for smaller size */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for glass effect */
+  backdrop-filter: blur(10px); /* Adds the glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support for blur effect */
   color: white;
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 0; /* Position at the very top */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Higher stacking context to prevent overlap */
+  transition: top 0.3s ease-in-out; /* Smooth hide/show effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+  height: 50px; /* Smaller height for a compact navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Hidden state of the navbar */
+.navbar.hidden {
+  top: -50px; /* Adjust height to match the reduced navbar size */
+}
+
+/* Visible state of the navbar */
+.navbar.visible {
+  top: 0; /* Show navbar at the top */
 }
 
 .navbar-container {
@@ -27,7 +48,7 @@ body {
 }
 
 .menu-toggle {
-  font-size: 24px;
+  font-size: 20px; /* Adjusted for smaller navbar */
   cursor: pointer;
   background: none;
   border: none;
@@ -48,10 +69,7 @@ body {
 .navbar-menu a {
   text-decoration: none;
   color: white;
-}
-
-.navbar-menu.open {
-  display: block;
+  font-size: 14px; /* Reduced font size for a compact look */
 }
 
 .navbar-icon {
@@ -61,6 +79,11 @@ body {
 }
 
 .logo-image {
-  width: 120px; /* Adjust to your preferred width */
+  width: 100px; /* Smaller logo size */
   height: auto; /* Maintain aspect ratio */
+}
+
+/* Extra spacing for body content to avoid overlap */
+body {
+  padding-top: 50px; /* Matches the navbar height */
 }
