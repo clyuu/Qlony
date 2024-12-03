@@ -3,12 +3,13 @@ body {
   color: white; /* Ensure text remains visible */
   margin: 0;
   padding: 0;
+  padding-top: 60px; /* Matches the navbar height to avoid overlap */
 }
 
 /* Navbar styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space out elements in navbar */
   align-items: center;
   padding: 10px 20px; /* Increased padding for better spacing */
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for glass effect */
@@ -21,7 +22,7 @@ body {
   z-index: 1000; /* Higher stacking context to prevent overlap */
   transition: top 0.3s ease-in-out; /* Smooth hide/show effect */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
-  height: 60px; /* Increased height to ensure all items fit */
+  height: 60px; /* Height of the navbar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
@@ -37,30 +38,36 @@ body {
 
 .navbar-container {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Push items to left and right */
+  align-items: center; /* Ensure items are vertically centered */
+  width: 100%; /* Ensure the container spans the full width */
 }
 
+/* Centered logo */
 .navbar-logo {
   display: flex;
+  justify-content: center;
   align-items: center;
+  position: absolute; /* Center logo relative to navbar */
+  left: 50%; /* Move to center horizontally */
+  transform: translateX(-50%); /* Adjust for accurate centering */
+  z-index: 2; /* Ensure it appears above other elements */
 }
 
-.menu-toggle {
-  font-size: 20px; /* Adjusted for smaller navbar */
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
+.navbar-logo img {
+  width: 120px; /* Adjust logo size as needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* Menu styles */
 .navbar-menu {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
   align-items: center; /* Ensure items are vertically centered */
+  justify-content: flex-end; /* Push menu items to the right */
+  flex-grow: 1; /* Push the menu items to the edges */
 }
 
 /* Navbar menu items */
@@ -73,21 +80,4 @@ body {
   color: white;
   font-size: 14px; /* Maintain a compact font size */
   line-height: 1.5; /* Adjust line height for better alignment */
-}
-
-/* Navbar icon (optional) */
-.navbar-icon {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
-.logo-image {
-  width: 100px; /* Smaller logo size */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Extra spacing for body content to avoid overlap */
-body {
-  padding-top: 60px; /* Matches the navbar height */
 }
