@@ -1,70 +1,71 @@
 /* General styling for the services section */
 .services {
-    padding: 80px 20px;
-    background: #f8f9fa; /* Light gray background for contrast */
-    color: #333; /* Dark text for readability */
-    text-align: center;
-  }
-  
-  /* Container for the services content */
-  .services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  /* Section title styling */
-  .services-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #2575fc; /* Match gradient colors from the Hero section */
-  }
-  
-  /* Description styling */
-  .services-description {
-    font-size: 1.2rem;
-    color: #555; /* Subtle contrast for secondary text */
-    margin-bottom: 2rem;
-    max-width: 800px;
-    line-height: 1.6;
-  }
-  
-  /* Services list styling */
-  .services-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    width: 100%;
-  }
-  
-  /* Individual service item styling */
-  .service-item {
-    background: #fff; /* White background for card-like appearance */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .service-item:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-  }
-  
-  /* Service title styling */
-  .service-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #6a11cb; /* Match gradient colors */
-  }
-  
-  /* Service description styling */
-  .service-item p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
-  }
+  padding: 80px 20px;
+  background: #f8f9fa; /* Light gray background for contrast */
+  color: #333; /* Dark text for readability */
+  text-align: center;
+}
+
+/* Container for the services content */
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Section title styling */
+.services-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #2575fc; /* Match gradient colors from the Hero section */
+}
+
+/* Description styling */
+.services-description {
+  font-size: 1.2rem;
+  color: #555; /* Subtle contrast for secondary text */
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Services list styling */
+.services-list {
+  display: grid; /* Use grid layout for better alignment */
+  grid-template-columns: repeat(5, 1fr); /* Fit 5 items in a single row */
+  gap: 1rem; /* Add gap between items */
+  width: 100%;
+  padding: 10px;
+}
+
+/* Individual service item styling */
+.service-item {
+  background: #fff; /* White background for card-like appearance */
+  padding: 15px; /* Reduced padding for smaller cards */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Service title styling */
+.service-item h3 {
+  font-size: 1.2rem; /* Reduced font size */
+  margin-bottom: 0.5rem;
+  color: #6a11cb; /* Match gradient colors */
+}
+
+/* Service description styling */
+.service-item p {
+  font-size: 0.9rem; /* Smaller font size */
+  color: #666;
+  line-height: 1.4;
+}
