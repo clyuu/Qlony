@@ -1,3 +1,27 @@
+/* Navigation Bar */
+.navbar {
+  position: fixed; /* Make the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent; /* Initial transparent background */
+  z-index: 1000; /* Ensure it's above other content */
+  color: white; /* Text color matches hero section */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style after scrolling past hero section */
+.navbar.scrolled {
+  background: white; /* Change to solid background */
+  color: black; /* Adjust text color for visibility */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+
 /* Hero Section */
 .hero {
   display: flex;

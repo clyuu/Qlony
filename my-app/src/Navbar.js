@@ -1,37 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(true); // State to control navbar visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control menu visibility
-  const [lastScrollY, setLastScrollY] = useState(0); // State to track last scroll position
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll position
 
+  // Toggle the menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Detect scroll position and update state
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        setShowNavbar(false); // Hide navbar when scrolling down
+      if (window.scrollY > 100) { // Adjust scroll threshold as needed
+        setIsScrolled(true);
       } else {
-        setShowNavbar(true); // Show navbar when scrolling up
+        setIsScrolled(false);
       }
-
-      setLastScrollY(currentScrollY); // Update last scroll position
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup on component unmount
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the menu visibility
-  };
+  }, []);
 
   return (
-    <nav className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         {/* Logo Section */}
         <div className="navbar-logo">

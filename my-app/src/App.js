@@ -1,34 +1,63 @@
 // App.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Hero from './Hero';
-import Services from './Services'; // Import the Services component
-import Portfolio from './Portfolio'; // Import the Portfolio component
-import About from './About'; // Import the About component
-import Contacts from './Contacts'; // Import the Contacts component
-import './App.css'; // Ensure the CSS file is imported for styles
+import Services from './Services';
+import Portfolio from './Portfolio';
+import About from './About';
+import Contacts from './Contacts';
+import Footer from './Footer';
+import './App.css';
 
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for the Navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > window.innerHeight - 50); // Trigger after scrolling past the hero section
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div>
-      <Navbar />
+      {/* Navbar and Hero Section */}
+      <header className="hero-container">
+        {/* Pass the `scrolled` state as a prop to Navbar */}
+        <Navbar scrolled={scrolled} />
+        <Hero />
+      </header>
+
       {/* Main content area */}
       <main>
-        {/* Hero section with SVG and GSAP animations */}
-        <Hero />
+        {/* Services Section */}
+        <section id="services" className="section services-section">
+          <Services />
+        </section>
 
-        {/* Services section with GSAP animations */}
-        <Services />
+        {/* Portfolio Section */}
+        <section id="portfolio" className="section portfolio-section">
+          <Portfolio />
+        </section>
 
-        {/* Portfolio section with GSAP animations */}
-        <Portfolio />
+        {/* About Section */}
+        <section id="about" className="section about-section">
+          <About />
+        </section>
 
-        {/* About section with GSAP animations */}
-        <About />
-
-        {/* Contact Us section with GSAP animations */}
-        <Contacts />
+        {/* Contact Us Section */}
+        <section id="contact" className="section contact-section">
+          <Contacts />
+        </section>
       </main>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }

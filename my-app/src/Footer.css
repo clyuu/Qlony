@@ -1,0 +1,29 @@
+/* Footer.css */
+.footer {
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 10px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-top: 2px solid #ff4081; /* Accent border */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-nav {
+    margin-top: 10px;
+  }
+  
+  .footer-link {
+    margin: 0 10px;
+    color: #ff4081; /* Accent color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #ff79a2; /* Hover color */
+  }
